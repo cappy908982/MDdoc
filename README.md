@@ -1,7 +1,7 @@
 # DataMining
 ## Titanic Documentation
 
-### First step: checking the dataset against:
+### First step: checking the dataset against
 
     1. Outliers,
     2. Duplicates,
@@ -11,7 +11,7 @@
     6. Wrong/improper values,
     7. Other data-related issues,
 
-|Lp|L.of code|What I am doing                                                          |For what purpose                                                                         |What information about data cleaning and preparation I've got from it|
+|No|L.of code|What I am doing                                                          |For what purpose                                                                         |What information about data cleaning and preparation I've got from it|
 |--|---------|-------------------------------------------------------------------------|----------------|-----------------------------------------|
 |1 |1        |I'm importing a module called pandas                                     |For easier way to manage data flow between tsv file and the program                 |-|
 |2 |4        |I'm reading a file "Titanic.tsv" by pandas.                              |I need to read the file in program before I start to repair it                         |-|
@@ -29,21 +29,28 @@
 |13|19       |Printing unique values of "Parch" field                                  |To see what values does it contain                                                     |-|
 |14|20       |Printing unique values of "Embarked" field                               |To see what values does it contain                                                     |Embarked values "S", "C" and "Q" are correct. "So", "Co", "Qe" and nan are incorrect.|
 
-Ordered list:
-1. Number one
-2. Number two
-3. Number three
-4. Number four
+Things needed to be repair:
+- There are 3 duplicated rows
+- Some "Sex" values are written incorrect.
+- Survived is kind of boolean value - shouldn't contain anything what isn't equal 1 or 2.
+- Pclass should have values equal to 1, 2 or 3.
+- In my opinion there is no possibility to have SibSp (siblings or spouse) equal to 70.
+- Embarked has correct values "S", "C" and "Q", the rest are incorrect.
+- There are 863 missing, NaN or blank values
+- PassengerId has some strange and missing values.
 
-Unordered list:
-- item one
-- item two
-- item three
-- item four
+### Second step: Repairing
 
-**This is some example of the bold text.**
-*This is some italic text.*
-***This is some bold italic text.***
-
-Equation:
-$E=mc^2$
+|No|L.of code|What I am doing|For what purpose|What result did I get|
+|--|---------|---------------|----------------|---------------------|
+|1|23|dropping duplicated records from data frame|to have only unique data|891 records of unique data|
+|2|24|replacing all the incorrect data like "malee" by correct ones|2 different sexes|
+|3|25|replacing value "-4" in Survived column to 0| All records in Survived column are equal to 0 or 1 now|
+|4|26|replacing -2.0 in Pclass to 2.0|3 different possible values in Pclass: 1.0, 2.0 and 3.0|
+|5|27|replacing 70 to 7 in SibSp|More real values of Siblings and spouses|
+|6|28|replacing "So", "Co" and "Qe" to "S", "C" an "Q" in Embarked|Correct 3 Embarked values|
+|7|30|Dropping the column Cabin, because in that column there is 686 missing, NaN or blank values|686 gaps less|
+|8|31|Dropping the column Age, because in that column there is 173 missing, NaN or blank values|173 gaps less|
+|9|32|Dropping rows where Ticket, Fare or Embarked are NaN, missing or blank values|No gaps left|
+|10|33|Resseting indexes of existing dataframe|-|
+|11|34|Adding indexes to "PassengerId" as a real index+1 (because we start count from 1)|to fill all the gaps and weird values there|
