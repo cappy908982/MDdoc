@@ -27,7 +27,7 @@
 |11|17       |Printing unique values of "Sex" field                                    |To see what values does it contain                                                     |There were 2 kind of sexes "male" and "female". "malef","mal","fem","femmale","feemale","Female","malee" and "F" are incorrect. 
 |12|18       |Printing unique values of "SibSp" field                                  |To see what values does it contain                                                     |In my opinion there is no possibility to have number of siblings and spouses equal to 70.|
 |13|19       |Printing unique values of "Parch" field                                  |To see what values does it contain                                                     |-|
-|14|20       |Printing unique values of "Embarked" field                               |To see what values does it contain                                                     |Embarked values "S", "C" and "Q" are correct. "So", "Co", "Qe" and nan are incorrect.
+|14|20       |Printing unique values of "Embarked" field                               |To see what values does it contain                                                     |Embarked values "S", "C" and "Q" are correct. "So", "Co", "Qe" and nan are incorrect.|
 
 Ordered list:
 1. Number one
