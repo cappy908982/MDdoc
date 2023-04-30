@@ -41,9 +41,9 @@ Things needed to be repair:
 
 ### Second step: Repairing
 
-|No|L.of code|What I am doing|For what purpose|What result did I get|
-|--|---------|---------------|----------------|---------------------|
-|1|23|dropping duplicated records from data frame|to have only unique data|891 records of unique data|
+|No|L.of code|What I am doing|What result did I get|
+|--|---------|---------------|---------------------|
+|1|23|dropping duplicated records from data frame|891 records of unique data|
 |2|24|replacing all the incorrect data like "malee" by correct ones|2 different sexes|
 |3|25|replacing value "-4" in Survived column to 0| All records in Survived column are equal to 0 or 1 now|
 |4|26|replacing -2.0 in Pclass to 2.0|3 different possible values in Pclass: 1.0, 2.0 and 3.0|
@@ -54,3 +54,5 @@ Things needed to be repair:
 |9|32|Dropping rows where Ticket, Fare or Embarked are NaN, missing or blank values|No gaps left|
 |10|33|Resseting indexes of existing dataframe|-|
 |11|34|Adding indexes to "PassengerId" as a real index+1 (because we start count from 1)|to fill all the gaps and weird values there|
+
+The last line of code (36) creates the new tsv file with cleaned & repaired data.
