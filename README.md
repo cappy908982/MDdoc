@@ -11,8 +11,8 @@
     6. Wrong/improper values,
     7. Other data-related issues,
 
-|Lp|L.of code|What I am doing                                                          |For what purpose                                                                         |
-|--|---------|-------------------------------------------------------------------------|----------------|What information about data cleaning and preparation I've got from it|
+|Lp|L.of code|What I am doing                                                          |For what purpose                                                                         |What information about data cleaning and preparation I've got from it|
+|--|---------|-------------------------------------------------------------------------|----------------|-----------------------------------------|
 |1 |1        |I'm importing a module called pandas                                     |For easier way to manage data flow between tsv file and the program                 |-|
 |2 |4        |I'm reading a file "Titanic.tsv" by pandas.                              |I need to read the file in program before I start to repair it                         |-|
 |2 |5        |I'm printing head of the file. It's default first five lines of that one.|I wanted to see some data, which are included in the file                                |Some of the lines has "Nan" value|
